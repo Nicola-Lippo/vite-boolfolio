@@ -1,11 +1,17 @@
 <script>
+export default {
+    name: 'AppFooter'
+}
 
 </script>
 
 <template>
-    <footer>
-        ciao sono il footer
-    </footer>
+    <div class="container">
+        <footer class="py-3 my-4">
+            <hr />
+            <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+        </footer>
+    </div>
 </template>
 
 <style lang="scss" scoped></style>

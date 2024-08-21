@@ -32,7 +32,7 @@ export default {
 
 <template>
   <AppHeader />
-  <div class="container">Prova</div>
+  <router-view></router-view>
   <AppFooter />
 </template>
 

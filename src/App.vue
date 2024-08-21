@@ -32,7 +32,11 @@ export default {
 
 <template>
   <AppHeader />
-  <router-view></router-view>
+  <main>
+    <div class="container py-5">
+      <router-view></router-view>
+    </div>
+  </main>
   <AppFooter />
 </template>
 

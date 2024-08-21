@@ -6,11 +6,7 @@ export default {
 </script>
 
 <template>
-    <main>
-        <div class="container">
-            App List
-        </div>
-    </main>
+    App List
 </template>
 
 <style lang="scss" scoped></style>

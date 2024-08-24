@@ -12,15 +12,30 @@ export default {
                 }
             },
             response: {},
+            currentPage: 1,
         }
     },
     components: {
         ListProject
     },
     methods: {
+        prevPage() {
+            console.log('indietro')
+            this.currentPage--;
+            this.getProject();
+        },
+        nextPage() {
+            console.log('avanti')
+            this.currentPage++;
+            this.getProject();
+        },
         getProject() {
             const apiUrl = this.api.baseUrl + this.api.endPoints.projectsList
-            axios.get(apiUrl)
+            axios.get(apiUrl, {
+                params: {
+                    page: this.currentPage,
+                }
+            })
                 .then((response) => {
                     console.log(response.data);
                     this.response = response.data;
@@ -39,9 +54,13 @@ export default {
     <h1>Projects</h1>
     <div>
         <div class="row">
-            <div class="col-4 py-3" v-for="project in response.results.data">
+            <div class="col-4 py-3" v-for="project in response.results?.data">
                 <ListProject :title="project.title" :slug="project.slug" :description="project.description" />
             </div>
+            <nav class="d-flex justify-content-around">
+                <div class="btn btn-primary" @click="prevPage" v-if="response.results?.prev_page_url">Prev</div>
+                <div class="btn btn-primary" @click="nextPage" v-if="response.results?.next_page_url">Next</div>
+            </nav>
         </div>
     </div>
 </template>

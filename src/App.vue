@@ -14,7 +14,7 @@ export default {
 <template>
   <AppHeader />
   <main>
-    <div class="container py-5">
+    <div class="container py-5 text-center">
       <router-view></router-view>
     </div>
   </main>

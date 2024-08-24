@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from './pages/AppHome.vue';
 import AppList from './pages/AppList.vue';
+import ListSlug from './pages/ListSlug.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +17,12 @@ const router = createRouter({
             name: 'list',
             component: AppList
         },
+        {
+            path: '/list:slug',
+            name: 'detagli',
+            component: ListSlug
+        },
+
     ]
 });
 
